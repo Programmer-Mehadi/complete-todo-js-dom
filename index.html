@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@2.24.0/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://kit.fontawesome.com/f57ad58d47.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="font-mono">
+    <h1 class="text-3xl font-bold text-center p-6">TODO</h1>
+
+    <main class="mb-14">
+      <!-- input section -->
+      <div class="w-10/12 mx-auto flex gap-4">
+        <textarea
+          id="todo-input"
+          class="border-2 border-gray-400 rounded px-4 py-1"
+          name=""
+          cols="100"
+          rows="3"
+          placeholder="Type Here"
+        ></textarea>
+        <button
+          id="add-todo-button"
+          class="text-xl font-bold bg-sky-200 text-sky-800 px-8 py-3 rounded w-fit h-fit"
+        >
+          Submit
+        </button>
+      </div>
+      <!-- todo list section -->
+      <div>
+        <h1
+          class="w-10/12 mx-auto my-6 py-1 px-5 rounded text-2xl font-bold bg-rose-100 text-rose-600"
+        >
+          Incomplete Todo
+        </h1>
+        <!-- todo list -->
+        <div
+          id="incomplete-todo-list"
+          class="w-10/12 mx-auto mt-8 grid grid-cols-3 gap-6"
+        ></div>
+        <!-- complete todo list -->
+        <h1
+          class="w-10/12 mx-auto my-6 py-1 px-5 rounded text-2xl font-bold bg-green-100 text-green-600"
+        >
+          Complete Todo
+        </h1>
+        <div
+          id="complete-todo-list"
+          class="w-10/12 mx-auto mt-8 grid grid-cols-3 gap-6"
+        ></div>
+      </div>
+    </main>
+    <!-- view modal -->
+    <input type="checkbox" id="my-modal-3" class="modal-toggle" />
+    <div class="modal">
+      <div class="modal-box w-11/12 max-w-5xl relative">
+        <label
+          for="my-modal-3"
+          class="btn btn-sm btn-circle absolute right-2 top-2"
+          >✕</label
+        >
+        <h3 class="text-lg font-bold">View Todo!</h3>
+        <p id="modal-todo-content" class="py-4"></p>
+      </div>
+    </div>
+    <!-- Edit modal -->
+    <input type="checkbox" id="my-modal-4" class="modal-toggle" />
+    <div class="modal">
+      <div class="modal-box w-11/12 max-w-5xl relative">
+        <label
+          for="my-modal-4"
+          class="btn btn-sm btn-circle absolute right-2 top-2"
+          >✕</label
+        >
+        <h3 class="text-lg font-bold">Edit Todo!</h3>
+        <textarea
+          id="modal-edit-todo-content"
+          class="border-2 border-gray-400 rounded px-4 py-1"
+          name=""
+          cols="100"
+          rows="5"
+          placeholder="Type Here"
+        ></textarea>
+        <label
+          for="my-modal-4"
+          class="btn btn-sm btn-rounded bg-green-200 border-0 hover:bg-green-200 text-green-600 px-8 py-1 font-bold"
+          id="save-todo"
+          >Save</label
+        >
+        <!-- <button for="my-modal-4" class="rounded">Save</button> -->
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
